@@ -1,0 +1,4 @@
+#!/bin/bash
+
+word=$1
+lynx -dump http://dict.baidu.com/s?wd=$word >websap.html

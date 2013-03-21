@@ -1,0 +1,290 @@
+
+<!doctype html><html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="keywords" content="百度词典搜索支持全面的英汉词典、汉英词典、汉语字典、汉语词典、汉语成语词典功能，以及强大的中英文自动翻译功能。"/>
+<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+
+
+<title>百度词典搜索_men</title>
+<script>
+var tabSwitcher={_map:{},$:function(a){return document.getElementById(a)},init:function(){var g,f,c,a,e=this;for(var d=0;d<arguments.length;d++){g=this.$(arguments[d]);if(g.className.indexOf("tablist")>=0){c=g.getElementsByTagName("li");a=c.length;while(a--){f=c[a];e._map[f.getAttribute("rel")]=g.id;f.onclick=function(){e.action(this,this.getAttribute("rel"));return false}}e.action(c[0],c[0].getAttribute("rel"))}}},action:function(c,a){var d=this._map,b=d[d[a]];if(b&&(b==c)){return}if(b){b.className="tab";this.$(b.getAttribute("rel")).style.display="none"}c.className="active";this.$(a).style.display="block";d[d[a]]=c}};
+
+
+function showMoreResult(target,lists,limit){
+	if(lists.length <= limit){ return; }
+	baidu.dom.setStyle(target.parentNode,"display","block");
+	for(var i = limit,len = lists.length; i < len; i++){
+		lists[i] && baidu.dom.setStyle(lists[i],"display","none");
+	}
+	baidu.on(target,"click",function(e){
+		if(baidu.dom.hasClass(this.parentNode,"more-result-open")){
+			baidu.dom.removeClass(this.parentNode,"more-result-open");
+			for(var i = limit,len = lists.length; i < len; i++){
+				baidu.dom.setStyle(lists[i],"display","none");
+			}
+			this.innerHTML = "查看更多";
+		}else{
+			baidu.dom.addClass(this.parentNode,"more-result-open");
+			for(var i = limit,len = lists.length; i < len; i++){
+				baidu.dom.setStyle(lists[i],"display","");
+			}
+			this.innerHTML = "收起更多";
+		}
+		baidu.event.preventDefault(e);
+	});
+};
+var QUERY_STYLE = -1;</script>
+<script src="/static/js/tangram-base-1.5.0.js"></script>
+<link rel="stylesheet" href="/static/css/index-min.css">
+<!--[if IE 8]><style>ul.tablist{padding-bottom:6px;}</style><![endif]-->  
+</head>
+
+<body>
+<div id="container">
+
+<div id="head-bar">
+	<a href="#" target="_blank" id="shoucang">收藏</a><i>|</i><a href="http://fanyi.baidu.com/appdownload/download.html" target="_blank" id="new_mobile_phone">手机版</a><i>|</i><a href="http://fanyi.baidu.com" target="_blank">百度翻译</a><i>|</i><a href="http://fanyi.baidu.com/writing" target="_blank">写作助手</a><i>|</i><a href="http://www.baidu.com" target="_blank">百度首页</a>
+</div>
+
+	<div id="head"><div class="nv"><a href="/" class="logo"><img src="static/img/logo-dict-new.gif" width="117" height="38" border="0" alt="到百度首页"></a><div class="nav"><a href="http://news.baidu.com/ns?cl=2&rn=20&tn=news&ie=utf-8&word=men">新闻</a>　<a href="http://www.baidu.com/s?wd=men&cl=3&tn=baidu&ie=utf-8">网页</a>　<a href="http://tieba.baidu.com/f?kw=men&ie=utf-8">贴吧</a>　<a href="http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&word=men&fr=wwwt&ie=utf-8">知道</a>　<a href="http://music.baidu.com/search?fr=ps&key=men&ie=utf-8">音乐</a>　<a href="http://image.baidu.com/i?tn=baiduimage&ct=201326592&lm=-1&cl=2&word=men&ie=utf-8">图片</a>　<a href="http://fanyi.baidu.com/translate?query=men">翻译</a>　<b>词典</b></div></div>
+	
+	<form name="f" action="s" class="fm"><div id="sug" onselectstart="return false"></div>
+	<input name="wd" id="kw" class="i" value="men" maxlength="50" autocomplete="off"><span class="btn_wr"><input type="submit" id="su" value="百度一下" class="btn" onmousedown="this.className='btn btn_h'" onmouseout="this.className='btn'"></span><span class="head-tools"><a href="#" id="setter">设置</a><i>|</i><a href="http://www.baidu.com/search/dict.html" target="_blank">帮助</a></span>
+	</form>
+	</div>
+
+
+
+<div id="wraper">
+				
+
+		
+
+		
+
+		
+
+		
+
+					
+			
+					
+			
+					
+
+					
+
+							
+
+											<div id="pronounce">
+		<h2><strong>men</strong><span>[英]<b lang="EN-US" xml:lang="EN-US">[men]</b><a href="#" url="http://res.iciba.com/resource/amp3/0/0/d2/fc/d2fc17cc2feffa1de5217a3fd29e91e8.mp3" >&nbsp;</a></span><span>[美]<b lang="EN-US" xml:lang="EN-US">[mɛn]</b><a href="#" url="http://res.iciba.com/resource/amp3/1/0/d2/fc/d2fc17cc2feffa1de5217a3fd29e91e8.mp3">&nbsp;</a></span></h2>	</div>
+						<!-- 如果是中文query，则展示中英文解释的切换 -->
+				<!-- 结束 -->					
+	
+	<div class="en-query-simple-means" id="en-query-simple-means">
+		<span class="arrow"></span>
+		<ul class="tablist" id="en-simple-means-list">
+			<li rel="en-simple-means">简明释义</li> 		</ul>
+		<div class="tab-content">
+			<div class="tab en-simple-means dict-en-simplemeans-english" id="en-simple-means"> <div><p><strong></strong><span>（man的复数）；区分有魄力（或能干、勇敢等）的人；见风使舵；八面玲珑</span></p><p><strong>n.</strong><span>人（ man的名词复数 ）；人类；男人；男子汉</span></p></div><p><span>易混淆的单词：<a href="/s?wd=MEn">MEn</a><a href="/s?wd=Men">Men</a><a href="/s?wd=MEN">MEN</a></span></p>  <div class="source">以下结果由 <img src="/static/img/jinshan.png"><a href='http://cp.iciba.com/' target="_blank">金山词霸</a> 提供</div></div> 		</div>
+	</div>
+	<script>tabSwitcher.init("en-simple-means-list");</script>
+
+	
+	
+	<div id="en-query-section">
+		<span class="arrow"></span>
+		<ul class="tablist" id="en-section-list">
+			<li rel="en-collins">柯林斯高阶英汉词典</li> 												<li rel="en-syn-ant">同反义词</li> 		</ul>
+		<div class="tab-content">
+		<div class="tab en-collins dict-en-collins-english" id="en-collins"> 
+		<ul><li><h3><span class="collins-num">1.</span><span class="en-cx-tip" content=""></span><span class="collins-cnmeans">（man 的复数）</span><span><b>Men</b> is the plural of <b>man</b> .</span></h3><ul></ul></li></ul>  <div class="source">以下结果由 <img src="/static/img/jinshan.png"><a href='http://cp.iciba.com/' target="_blank">金山词霸</a> 提供</div><div id="more-collins" class="more-result"><a href='#'>查看更多</a></div></div> 
+			<script>
+				if(baidu.dom.query(".collins-nav").length > 0){
+					baidu.object.each(baidu.dom.query(".collins-item + div"),function(item,index){
+						baidu.dom.setStyle(item,"display","none");
+
+						//如果li数量多于5个，那么就插入一个更多的按钮
+						var lists = baidu.dom.children(item.getElementsByTagName("ul")[0]);
+						var divElem = null;
+						if(lists.length > 5){
+							divElem = baidu.dom.create("div",{id : "more-collins-" + index});
+							divElem.className = "more-result";
+							divElem.innerHTML = "<a href='#'>查看更多</a>";
+							item.appendChild(divElem);
+							showMoreResult(baidu.dom.query("#more-collins-" + index + " a")[0],lists,5);
+						}
+					});
+
+					var firstCollinsItem = baidu.dom.query(".collins-item a")[0];
+					baidu.dom.addClass(firstCollinsItem,"collins-item-open");
+					baidu.dom.setStyle(firstCollinsItem.parentNode.nextSibling,"display","block");
+
+
+					baidu.object.each(baidu.dom.query(".collins-item a"),function(item,index){
+						baidu.on(item,"click",function(e){
+							var display = baidu.dom.hasClass(this,"collins-item-open") ? "none" : "block";
+
+							baidu.dom[(display === "none" ? "removeClass" : "addClass")](this,"collins-item-open");
+							baidu.dom.setStyle(this.parentNode.nextSibling,"display",display);
+
+							baidu.event.preventDefault(e);
+						});
+					});
+
+					baidu.object.each(baidu.dom.query(".collins-nav a"),function(item,index){
+						baidu.on(item,"click",function(e){
+							var targetElem = baidu.dom.query("#" + this.getAttribute("rel") + " a")[0];
+
+							baidu.object.each(baidu.dom.query(".collins-item a"),function(item,index){
+								baidu.dom.removeClass(item,"collins-item-open");
+								baidu.dom.setStyle(item.parentNode.nextSibling,"display","none");
+							});
+
+							baidu.dom.addClass(targetElem,"collins-item-open");
+							baidu.dom.setStyle(targetElem.parentNode.nextSibling,"display","block");
+						});
+					});
+
+				}else{
+					showMoreResult(baidu.dom.query("#more-collins a")[0],baidu.dom.query(".en-collins > ul > li"),5);
+				}
+			</script>
+				
+						<div class="tab en-syn-ant dict-en-synant-english" id="en-syn-ant">  <dl>
+	<dt>同义词</dt>
+	<dd><div><div class="syn-ant-cixing"><strong>&nbsp;</strong></div><div class="syn-ant-list"><ul><li><p class="links"><a href="/s?wd=brigade">brigade</a></p></li></ul></div></div>	</dd>
+</dl>  <div class="source">以下结果由 <img src="/static/img/jinshan.png"><a href='http://cp.iciba.com/' target="_blank">金山词霸</a> 提供</div></div> 	</div>
+	</div>
+	<script>tabSwitcher.init("en-section-list");</script>
+
+	
+												<div id="example-box">
+		<span class="arrow"></span>
+		<ul class="tablist" id="example">
+			<li rel="example-content">例句</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab" id="example-content"><div id="more-example" class="more-result"><a href='#'>查看更多</a></div></div>
+		</div>
+	</div>
+
+	<script>
+		var example_data = [[[["Where","w_0","w_0,w_8,w_9",0," "],["are","w_1","",0," "],["your","w_2","",0," "],["men","w_3","w_3,w_7",1],["?","w_4","w_4,w_10",0]],[["我们","w_5","",0],["的","w_6","",0],["人","w_7","w_3,w_7",2],["在","w_8","w_0,w_8,w_9",0],["哪里","w_9","w_0,w_8,w_9",0],["？","w_10","w_4,w_10",0]],"http://www.shooter.cn"],[[["Men","w_11","w_11,w_17",1," "],["surpass","w_12","w_12,w_18",0," "],["women","w_13","w_13,w_19",0," "],["in","w_14","",0," "],["strength","w_15","w_15,w_20",0],[".","w_16","w_16,w_22",0]],[["男人","w_17","w_11,w_17",2],["比","w_18","w_12,w_18",0],["女人","w_19","w_13,w_19",0],["力气","w_20","w_15,w_20",0],["大","w_21","",0],["。","w_22","w_16,w_22",0]],"http://www.chujob.cn/hi/so/?jinggenius$_$9bbcd1c8dc22f21c7e3e6f41.html"],[[["Men","w_23","w_23,w_30",1," "],["praise","w_24","w_24,w_31",0," "],["guilin","w_25","w_25,w_32",0," "],["for","w_26","",0," "],["its","w_27","",0," "],["scenery","w_28","w_28,w_34",0],[".","w_29","w_29,w_35",0]],[["人们","w_30","w_23,w_30",2],["称赞","w_31","w_24,w_31",0],["桂林","w_32","w_25,w_32",0],["的","w_33","",0],["风景","w_34","w_28,w_34",0],["。","w_35","w_29,w_35",0]],"http://hotdic.com/s/この列は桂林を通ります/"],[[["Men","w_36","w_36,w_45",1," "],["can","w_37","w_37,w_50",0],["\'t","w_38","",0," "],["live","w_39","w_39,w_51",0," "],["without","w_40","w_40,w_46",0," "],["air","w_41","w_41,w_47",0," "],["and","w_42","w_42,w_48",0," "],["water","w_43","w_43,w_49",0],[".","w_44","w_44,w_52",0]],[["人类","w_45","w_36,w_45",2],["没有","w_46","w_40,w_46",0],["空气","w_47","w_41,w_47",0],["和","w_48","w_42,w_48",0],["水","w_49","w_43,w_49",0],["不能","w_50","w_37,w_50",0],["生存","w_51","w_39,w_51",0],["。","w_52","w_44,w_52",0]],"http://1-123.com/Education/English/SeventhGradeLast/danyuanceshi/124482.html"],[[["Women","w_53","w_53,w_58",0," "],["iike","w_54","w_54,w_59",0," "],["sexy","w_55","w_55,w_60",0," "],["men","w_56","w_56,w_62",1],[".","w_57","w_57,w_63",0]],[["女人","w_58","w_53,w_58",0],["喜欢","w_59","w_54,w_59",0],["性感","w_60","w_55,w_60",0],["的","w_61","",0],["男人","w_62","w_56,w_62",2],["。","w_63","w_57,w_63",0]],"http://www.shooter.cn"],[[["What","w_64","w_64,w_71",0," "],["killed","w_65","w_65,w_72",0," "],["those","w_66","w_66,w_69",0," "],["men","w_67","w_67,w_70",1],["?","w_68","w_68,w_74",0]],[["那些","w_69","w_66,w_69",0],["人","w_70","w_67,w_70",2],["怎么","w_71","w_64,w_71",0],["死","w_72","w_65,w_72",0],["的","w_73","",0],["？","w_74","w_68,w_74",0]],"http://www.shooter.cn"],[[["Men","w_75","w_75,w_81",1," "],["are","w_76","",0," "],["usually","w_77","w_77,w_82",0," "],["called","w_78","w_78,w_83,w_84",0," "],["mister","w_79","w_79,w_85",0],[".","w_80","w_80,w_86",0]],[["男人","w_81","w_75,w_81",2],["一般","w_82","w_77,w_82",0],["称","w_83","w_78,w_83,w_84",0],["为","w_84","w_78,w_83,w_84",0],["先生","w_85","w_79,w_85",0],["。","w_86","w_80,w_86",0]],"http://admin.dj.iciba.com/v5/djsearchV5.php?s=称为&amp;more=1&amp;s2="],[[["Men","w_87","w_87,w_93",1," "],["especially","w_88","w_88,w_94",0," "],["love","w_89","w_89,w_95",0," "],["a","w_90","",0," "],["bargain","w_91","w_91,w_96,w_97",0],[".","w_92","w_92,w_98",0]],[["男人","w_93","w_87,w_93",2],["特别","w_94","w_88,w_94",0],["喜欢","w_95","w_89,w_95",0],["便宜","w_96","w_91,w_96,w_97",0],["货","w_97","w_91,w_96,w_97",0],["。","w_98","w_92,w_98",0]],"http://119.75.215.166/view/54985aefaeaad1f346933f49.html"],[[["The","w_99","",0," "],["men","w_100","w_100,w_105",1," "],["raised","w_101","w_101,w_107",0," "],["a","w_102","",0," "],["cheer","w_103","w_103,w_109",0],[".","w_104","w_104,w_110",0]],[["男人","w_105","w_100,w_105",2],["们","w_106","",0],["发出","w_107","w_101,w_107",0],["一阵","w_108","",0],["欢呼","w_109","w_103,w_109",0],["。","w_110","w_104,w_110",0]],"http://60.28.216.8/男人们/"],[[["Who","w_111","w_111,w_117",0," "],["are","w_112","w_112,w_118",0," "],["these","w_113","w_113,w_116",0," "],["men","w_114","w_114,w_120",1],["?","w_115","w_115,w_121",0]],[["这些","w_116","w_113,w_116",0],["都","w_117","w_111,w_117",0],["是","w_118","w_112,w_118",0],["什么","w_119","",0],["人","w_120","w_114,w_120",2],["？","w_121","w_115,w_121",0]],"http://www.shooter.cn"],[[["What","w_122","w_122,w_130",0," "],["about","w_123","w_123,w_131",0," "],["my","w_124","",0," "],["men","w_125","w_125,w_129",1],["?","w_126","w_126,w_132",0]],[["我","w_127","",0],["的","w_128","",0],["人","w_129","w_125,w_129",2],["怎么","w_130","w_122,w_130",0],["办","w_131","w_123,w_131",0],["？","w_132","w_126,w_132",0]],"http://www.shooter.cn"],[[["Men","w_133","w_133,w_139",1," "],["turned","w_134","w_134,w_140",0," "],["to","w_135","w_135,w_141",0," "],["nature","w_136","w_136,w_142",0," "],["itself","w_137","w_137,w_143",0],[".","w_138","w_138,w_144",0]],[["人们","w_139","w_133,w_139",2],["开始","w_140","w_134,w_140",0],["面向","w_141","w_135,w_141",0],["自然","w_142","w_136,w_142",0],["本身","w_143","w_137,w_143",0],["。","w_144","w_138,w_144",0]],"http://bab.la/字典/中文-英语/面向.html?filter[]=-2&amp;last=activate"],[[["The","w_145","",0," "],["men","w_146","w_146,w_152",1," "],["hooted","w_147","w_147,w_155",0," "],["angrily","w_148","w_148,w_153,w_154",0," "],["at","w_149","",0," "],["them","w_150","w_150,w_156",0],[".","w_151","w_151,w_157",0]],[["人们","w_152","w_146,w_152",2],["生气","w_153","w_148,w_153,w_154",0],["地","w_154","w_148,w_153,w_154",0],["呵斥","w_155","w_147,w_155",0],["它们","w_156","w_150,w_156",0],["。","w_157","w_151,w_157",0]],"http://www.chinaorb.com/index.php?s_word=呵斥"],[[["Agitators","w_158","w_158,w_166,w_167,w_168",0," "],["incited","w_159","w_159,w_165",0," "],["the","w_160","",0," "],["men","w_161","w_161,w_169",1," "],["to","w_162","w_162,w_170",0," "],["strike","w_163","w_163,w_171",0],[".","w_164","w_164,w_172",0]],[["鼓动","w_165","w_159,w_165",0],["家","w_166","w_158,w_166,w_167,w_168",0],["们","w_167","w_158,w_166,w_167,w_168",0],["怂恿","w_168","w_158,w_166,w_167,w_168",0],["人们","w_169","w_161,w_169",2],["去","w_170","w_162,w_170",0],["罢工","w_171","w_163,w_171",0],["。","w_172","w_164,w_172",0]],"http://admin.dj.iciba.com/agitators"],[[["Early","w_173","w_173,w_180",0," "],["men","w_174","w_174,w_181",1," "],["found","w_175","w_175,w_182",0," "],["fire","w_176","w_176,w_183",0," "],["very","w_177","w_177,w_184",0," "],["useful","w_178","w_178,w_185",0],[".","w_179","w_179,w_186",0]],[["早期","w_180","w_173,w_180",0],["人类","w_181","w_174,w_181",2],["发现","w_182","w_175,w_182",0],["火","w_183","w_176,w_183",0],["非常","w_184","w_177,w_184",0],["有用","w_185","w_178,w_185",0],["。","w_186","w_179,w_186",0]],"http://www.hjenglish.com/new/p126290/"],[[["God","w_187","w_187,w_195",0," "],["and","w_188","w_188,w_196",0," "],["men","w_189","w_189,w_197",1," "],["had","w_190","w_190,w_198",0," "],["completely","w_191","w_191,w_201",0," "],["forgotten","w_192","w_192,w_202",0," "],["me","w_193","w_193,w_200",0],[".","w_194","w_194,w_204",0]],[["上帝","w_195","w_187,w_195",0],["和","w_196","w_188,w_196",0],["人类","w_197","w_189,w_197",2],["都","w_198","w_190,w_198",0],["把","w_199","",0],["我","w_200","w_193,w_200",0],["完全","w_201","w_191,w_201",0],["遗忘","w_202","w_192,w_202",0],["了","w_203","",0],["。","w_204","w_194,w_204",0]],"Provided by jukuu"],[[["Cultural","w_205","w_205,w_213",0," "],["hearth","w_206","w_206,w_214",0," "],["is","w_207","w_207,w_215,w_216",0," "],["the","w_208","",0," "],["birthplace","w_209","w_209,w_219,w_220",0," "],["of","w_210","",0," "],["men","w_211","w_211,w_217",1],[".","w_212","w_212,w_221",0]],[["文化","w_213","w_205,w_213",0],["源地","w_214","w_206,w_214",0],["是","w_215","w_207,w_215,w_216",0],["指","w_216","w_207,w_215,w_216",0],["人类","w_217","w_211,w_217",2],["的","w_218","",0],["发祥","w_219","w_209,w_219,w_220",0],["地","w_220","w_209,w_219,w_220",0],["。","w_221","w_212,w_221",0]],"http://www.ceps.com.tw/ec/ecjnlarticleView.aspx?atliid=196051"],[[["Men","w_222","w_222,w_231",1," "],["first","w_223","w_223,w_235,w_236",0," "],["stepped","w_224","w_224,w_237",0," "],["on","w_225","w_225,w_238",0," "],["the","w_226","",0," "],["moon","w_227","w_227,w_239",0," "],["in","w_228","w_228,w_232",0," "],["1969","w_229","w_229,w_233",0],[".","w_230","w_230,w_240",0]],[["人类","w_231","w_222,w_231",2],["在","w_232","w_228,w_232",0],["1969","w_233","w_229,w_233",0],["年","w_234","",0],["第一","w_235","w_223,w_235,w_236",0],["次","w_236","w_223,w_235,w_236",0],["登","w_237","w_224,w_237",0],["上","w_238","w_225,w_238",0],["月球","w_239","w_227,w_239",0],["。","w_240","w_230,w_240",0]],"http://www.nciku.cn/search/en/examples/moon?pageNo=2"],[[["Brave","w_241","w_241,w_248",0," "],["men","w_242","w_242,w_250",1," "],["meet","w_243","w_243,w_251",0," "],["danger","w_244","w_244,w_255",0," "],["with","w_245","",0," "],["assurance","w_246","w_246,w_252",0],[".","w_247","w_247,w_256",0]],[["勇敢","w_248","w_241,w_248",0],["的","w_249","",0],["男子汉","w_250","w_242,w_250",2],["会","w_251","w_243,w_251",0],["自信","w_252","w_246,w_252",0],["的","w_253","",0],["面对","w_254","",0],["危险","w_255","w_244,w_255",0],["。","w_256","w_247,w_256",0]],"Provided by jukuu"],[[["Women","w_257","w_257,w_272",0," "],["are","w_258","",0," "],["not","w_259","w_259,w_273",0," "],["outdone","w_260","w_260,w_274",0," "],["by","w_261","",0," "],["men","w_262","w_262,w_275",1," "],["in","w_263","w_263,w_267",0," "],["winter","w_264","w_264,w_268",0," "],["olympics","w_265","w_265,w_269,w_270",0],[".","w_266","w_266,w_276",0]],[["在","w_267","w_263,w_267",0],["冬奥","w_268","w_264,w_268",0],["会","w_269","w_265,w_269,w_270",0],["上","w_270","w_265,w_269,w_270",0],["，","w_271","",0],["巾帼","w_272","w_257,w_272",0],["不","w_273","w_259,w_273",0],["让","w_274","w_260,w_274",0],["须眉","w_275","w_262,w_275",2],["。","w_276","w_266,w_276",0]],"http://bbs.qbwh.com/thread-54010-1-1.html"]];
+
+		var buildExampleHTML=function(y,r){var w="";var s="";var v="";var x="";var z="";var o="";var H="";var A=null;var p=null;for(var q=0;q<r.length;q++){A=r[q][0];p=r[q][1];w=r[q][2];for(var I=0;I<A.length;I++){H=A[I][0]+(A[I][4]?A[I][4]:"");var u="";if(A[I][3]===2){u="hi_type_2"}else{if(A[I][3]===1){u="hi_type_1"}}if(u){H="<em class='"+u+"'><b>"+H+"</b></em>"}v+="<span id="+A[I][1]+" tid="+A[I][2]+">"+H+"</span>"}for(var K=0;K<p.length;K++){H=p[K][0]+(p[K][4]?p[K][4]:"");var u="";if(p[K][3]===2){u="hi_type_2"}else{if(p[K][3]===1){u="hi_type_1"}}if(u){H="<em class='"+u+"'>"+H+"</em>"}x+="<span id="+p[K][1]+" tid="+p[K][2]+">"+H+"</span>"}if(w){var G=/\w+:\/\/([^\/]+).*/;var J=w.match(G);var F=r[q][3];var n;if(J){w="<a target=_blank href='"+J[0]+"'>"+J[1]+"</a>"}w="<p class='dict-resource'>"+w+"</p>"}s+="<li><p class='dict-source'>"+v+"</p><p class='dict-target'>"+x+"</p>"+w+"</li>";v="";x=""}y.innerHTML="<ol>"+s+"</ol>"+y.innerHTML};
+				var initExampleHilight=function(container){var setHilightClass = function(elem,classname){var targetId = "",targetIds = null,tagName = elem.tagName.toLowerCase();if(tagName === "em"){elem = elem.parentNode;}if(tagName === "b"){elem = elem.parentNode.parentNode;}targetId=elem.getAttribute("tid");if(!targetId){return}elem.className=classname;targetIds=targetId.split(",");for(var b=0,a=targetIds.length;b<a;b++){baidu.g(targetIds[b]).className=classname;}};baidu.on(container,'mouseover',function(e){var tg = baidu.event.getTarget(e);setHilightClass(tg,"dict-hilight");});baidu.on(container,'mouseout',function(e){var tg = baidu.event.getTarget(e);setHilightClass(tg,"");});}
+
+		buildExampleHTML(baidu.g("example-content"),example_data); 
+		initExampleHilight("example-content");
+	</script>
+
+	<script>
+		showMoreResult(baidu.dom.query("#more-example a")[0],baidu.dom.query("#example-content li"),5);
+	</script>
+
+	<script>tabSwitcher.init("example");</script>
+
+							<!-- 如果是中文query，则展示中英文解释的切换 -->
+				<!-- 结束 -->					
+
+
+
+		
+
+
+						<script>var PAGE_RESULT_TYPE=7;</script>
+	
+</div>
+
+</div>
+
+
+<div id="foot">
+	<p>&copy;2013 Baidu <span><a href='http://www.baidu.com/duty/' target="_blank">使用百度前必读</a> | <a href='http://www.baidu.com/search/dict.html' target="_blank">词典帮助</a> | <a href='http://tousu.baidu.com/dict/add' target="_blank">建议与反馈</a></span></p>
+</div>
+<!-- fanyi app tdc -->
+<div id="tran-download-tdc" class="tran-download-tdc">
+	<a href="http://fanyi.baidu.com/appdownload/download.html" target="_blank">百度翻译客户端<img src="img/tran-tdc.png" height="90" width="90">点击或扫描下载</a>
+</div>
+<!-- fanyi app tdc end -->
+<div id="scroll-top"></div>
+<div id="fmp_flash_div"></div>
+<div id="mask-layer"></div>
+<div id="setter-layer">
+	<a href='#' id="setter-layer-close"></a>
+	<h3 style="">搜索框提示</h3>
+	<p style="">是否希望搜索<b>汉字</b>和<b>英语</b>时显示搜索框提示</p>				
+	<label><input type="radio" value="yes" name="sughint" id="st1" checked="checked"/>显示</label>
+	<label><input type="radio" value="no" name="sughint" id="st2"/>不显示</label><br/>
+	<input type="button" value="保存设置" id="sv"/>
+</div>
+
+<div id="collins-tip-box"><span>&nbsp;</span><div id="collins-tip-content"></div></div><script src="/static/js/mis-min.js"></script>
+<script src="/static/js/page-min.js"></script>
+
+<script src="/static/js/fmp.js"></script>
+<script>
+FMP.cfg.movie = "/static/flash/fmp.swf?v=090105a";
+FMP.load();
+
+baidu.object.each(baidu.dom.query("#pronounce a"),function(item,index){
+	item.onclick = function(event){
+		var url = this.getAttribute("url");
+		try{
+  			if(FMP.loaded){
+  				FMP.stop();FMP.setUrl(url);FMP.play();
+  			}else{
+    			FMP.onLoad=function(){FMP.setUrl(url);FMP.play();}
+  			}
+		}catch(b){}
+		//event.preventDefault && event.preventDefault();
+		//return false;
+		baidu.event.preventDefault(event || window.event);
+	}
+	item.onmousedown = function(e){this.className="mp3_play";}
+	item.onmouseup = function(e){this.className="";}
+});
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3eb79004886d2d32543bea2e0900fe8d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 翻译APP二维码 -->
+<script>
+(function(){
+var ie6=!-[1,]&&!window.XMLHttpRequest,
+	timer=null,
+	oTdc=document.getElementById('tran-download-tdc');
+if(!ie6){
+	oTdc.style.display = 'block';
+	oTdc.style.top = '35%';
+	
+}else{
+	window.onscroll=function (){
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		var t=scrollTop+(document.documentElement.clientHeight-oTdc.offsetHeight)/2;
+		oTdc.style.position= 'absolute';
+		startMove(parseInt(t));
+		oTdc.style.display = 'block';
+}};
+function startMove(iTarget){
+	var oTdc=document.getElementById('tran-download-tdc');
+	clearInterval(timer);
+	timer=setInterval(function (){
+		var iSpeed=(iTarget-oTdc.offsetTop)/8;
+		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+		if(oTdc.offsetTop==iTarget){
+			clearInterval(timer);
+		}else{
+			oTdc.style.top=oTdc.offsetTop+iSpeed+'px';
+		}
+	}, 30);
+};
+})();
+</script>
+</body>
+</html>
